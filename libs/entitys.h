@@ -16,6 +16,7 @@ int *componentBitmapCount;
 int *componentBitmapSize;
 int *componentBitmapIndex;
 
+
 void initEntityComponentSystem() {
     entities = (struct entity *)malloc(sizeof(struct entity) * 100);
     entityCount = 0;

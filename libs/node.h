@@ -15,7 +15,8 @@ struct node *stack[10];
 int top = -1;
 int front = -1;
 int rear = -1;
-void insertAtNode(struct node **head, int data) {
+
+void addNode(struct node **head, int data) {
     struct node *new_node = (struct node *)malloc(sizeof(struct node));
     new_node->data = data;
     new_node->next = NULL;
@@ -83,16 +84,16 @@ void reverse(struct node **head) {
     }
     *head = prev;
 }
-void reverseRecursive(struct node **head) {
-    if (*head == NULL || (*head)->next == NULL) {
-        return;
-    }
-    struct node *next = (*head)->next;
-    reverseRecursive(&next);
-    (*head)->next->next = *head;
-    (*head)->next = NULL;
-    *head = next;
-}
+// void reverseRecursive(struct node **head) {
+//     if (*head == NULL || (*head)->next == NULL) {
+//         return;
+//     }
+//     struct node *next = (*head)->next;
+//     reverseRecursive(&next);
+//     (*head)->next->next = *head;
+//     (*head)->next->head);= NULL;
+//     *head = next;
+// }
 void deleteDuplicates(struct node **head) {
     struct node *temp = *head;
     struct node *prev = NULL;
@@ -182,9 +183,10 @@ void enqueue(struct node* data) {
     }
     rear++;
     queue[rear] = (struct node *)malloc(sizeof(struct node));
-    queue[rear]->data = (int)data;
+    queue[rear]->data = data;
     queue[rear]->next = NULL;
 }
+
 struct node* dequeue() {
     if (front == -1) {
         printf("Queue is empty\n");

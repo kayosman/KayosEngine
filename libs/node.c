@@ -5,16 +5,17 @@ int main(int argc, char *argv[]) {
     struct node *head = NULL;
     insertAtNode(&head, 1);
     insertAtNode(&head, 2);
-    insertAtNode(&head, 3);
-    insertAtNode(&head, 4);
-    insertAtNode(&head, 5);
+    insertAtNode(&head, 21);
+    insertAtNode(&head, 13);
+    insertAtNode(&head, 1);
     insertAtNode(&head, 6);
-    insertAtNode(&head, 7);
+    insertAtNode(&head, 54);
     insertAtNode(&head, 8);
     insertAtNode(&head, 9);
     insertAtNode(&head, 10);
     print(head);
     sort(&head);
+    print(head);
     print(head);
     return 0;
 }
